@@ -4,7 +4,7 @@ import Languages from '../languages.json';
 import TranslatedItem from './TranslatedItem';
 import TranslationInput from './TranslationInput';
 
-export default function Translator() {
+export default function Fanslator() {
 
     const [translatedTexts, setTranslatedTexts] = useState([]);
     const [pickedLanguage, setPickedLanguage] = useState('oldenglish');

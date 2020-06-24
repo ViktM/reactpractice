@@ -9,7 +9,7 @@ import {
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import FunHeader from './FunHeader';
-import Translator from './Translator';
+import Fanslator from './Fanslator';
 
 export default function App () {
   return (
@@ -19,7 +19,7 @@ export default function App () {
           <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
             <FunHeader/>
             <View View style={styles.body}>
-                <Translator/>
+                <Fanslator/>
             </View>
           </ScrollView>
         </SafeAreaView>
