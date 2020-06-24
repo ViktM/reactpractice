@@ -7,21 +7,27 @@ import TranslationInput from './TranslationInput';
 
 export default function OtherButton() {
 
-
     const [translatedTexts, setTranslatedTexts] = useState([]);
     const [pickedLanguage, setPickedLanguage] = useState('oldenglish');
-    const [response, setResponse] = useState({});
+    const [response, setResponse] = useState(
+        {
+            contents: {
+                text: "",
+                translated: "",
+                translation: ""
+            },
+            success: {
+                total: ''
+            }
+        }
+    );
 
-
-    const addTranslationHandler = toTranslate => {
-        setTranslatedTexts(currentTextToTranslate => [
-            ...currentTextToTranslate, toTranslate, pickedLanguage
-            // {key: Math.random().toString(), value: enteredGoal} //to use with Flatmap
-        ]);
+    const addTranslationHandler = textToTranslate => {
 
         // TODO account for 429 response - limited requests
-        const url = 'https://api.funtranslations.com/translate/' + pickedLanguage + '?text=' + toTranslate;
-        fetch(url)
+        // const url = 'https://api.funtranslations.com/translate/' + pickedLanguage + '?text=' + textToTranslate;
+        const fakeUrl = 'https://timeline.tv/gktest';
+        fetch(fakeUrl)
             .then(response => {
                 if (response.status === 200) {
                     return response.json()
@@ -30,19 +36,11 @@ export default function OtherButton() {
                     return false;
                 }
             })
-            .then(console.log("All good at " + url))
             .then(data => setResponse(data))
-            .then(console.log(response))
-
-        // const translatedStuff = response.map((contents, i) => {
-        //     const {
-        //         translated
-        //     } = content;
-        //     }
-        //
-        //
-        // )
-
+            .then(console.log(response.contents.translated))
+            .then(setTranslatedTexts(currentTextToTranslate => [
+                ...currentTextToTranslate, response.contents.translated
+            ]));
     };
 
     return (
@@ -50,7 +48,7 @@ export default function OtherButton() {
             <View>
                 <Picker
                     selectedValue={pickedLanguage}
-                    onValueChange={ value => setPickedLanguage(value)}
+                    onValueChange={value => setPickedLanguage(value)}
                 >
                     {Object.keys(Languages).map(key => (
                         <Picker.Item label={Languages[key]} value={key} key={key}/>
@@ -58,21 +56,15 @@ export default function OtherButton() {
                 </Picker>
             </View>
             <TranslationInput onTranslation={addTranslationHandler}/>
-            {/*<View>*/}
-            {/*<FlatList*/}
-            {/*    data={courseGoals}*/}
-            {/*    renderItem={itemData => (*/}
-            {/*        <View style={styles.textOut}>*/}
-            {/*            <Text>{itemData.item.value}</Text>*/}
-            {/*        </View>*/}
-            {/*)}*/}
-            {/*/>*/}
+
+
+
+            {/*<View style={styles.sectionContainer2}>*/}
+            {/*    <Text>{response.contents.translated}</Text>*/}
             {/*</View>*/}
             <View style={styles.sectionContainer2}>
-                {translatedTexts.map((translation) => <TranslatedItem key={Math.random().toString()} title={translation}/>
-                    // <View key={Math.random().toString()} style={styles.textOut}>
-                    //     <Text>{goal}</Text>
-                    // </View>
+                {translatedTexts.map((translation) =>
+                        <TranslatedItem key={translation + Math.random().toString()} title={translation}/>
                     )}
             </View>
 
