@@ -1,6 +1,6 @@
 import {StyleSheet, Picker, View} from 'react-native';
 import React, {useState} from 'react';
-import Languages from './languages.json';
+import Languages from '../languages.json';
 import TranslatedItem from './TranslatedItem';
 import TranslationInput from './TranslationInput';
 
