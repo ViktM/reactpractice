@@ -6,9 +6,8 @@ export default function FunHeader() {
     return (
         <ImageBackground
             accessibilityRole={'image'}
-            // source={require('./logo.png')}
             style={styles.background}
-            imageStyle={styles.logo}>
+            >
             <Text style={styles.text}>Welcome to the Fanslator</Text>
         </ImageBackground>
     );

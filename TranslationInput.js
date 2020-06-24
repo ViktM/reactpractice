@@ -10,15 +10,21 @@ const TranslationInput = props => {
     };
 
     return(
+        <View>
         <View style={styles.sectionContainer}>
             <TextInput
                 style={styles.textIn}
-                placeholder="Stuff here"
+                placeholder="Add translation"
                 onChangeText={goalInputHandler}
                 value={textToTranslate}
             />
-            <Button title="Add" onPress={props.onTranslation.bind(this, textToTranslate)}/>
         </View>
+    <View style={styles.sectionContainer2}>
+
+        <Button title="Translate!" onPress={props.onTranslation.bind(this, textToTranslate)}/>
+    </View>
+        </View>
+
     )
 }
 
@@ -29,11 +35,15 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.lighter,
     },
     sectionContainer: {
-        marginTop: 32,
-        paddingHorizontal: 24,
-        flexDirection: 'row',
+        marginTop: 50,
         justifyContent: 'space-between',
         alignItems: 'center',
-
+        borderBottomWidth: 1,
+    },
+    sectionContainer2: {
+        marginTop: 32,
+        paddingHorizontal: 24,
+        justifyContent: 'space-between',
+        alignItems: 'center',
     }
 });

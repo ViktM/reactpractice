@@ -1,21 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
-  Button,
   SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
-  Text,
   StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
-import ButtonStuff from './ButtonStuff';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import FunHeader from './FunHeader';
-import OtherButton from './OtherButton';
+import Translator from './Translator';
 
 export default function App () {
   return (
@@ -25,8 +19,7 @@ export default function App () {
           <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
             <FunHeader/>
             <View View style={styles.body}>
-                {/*<ButtonStuff/>*/}
-                <OtherButton/>
+                <Translator/>
             </View>
           </ScrollView>
         </SafeAreaView>
