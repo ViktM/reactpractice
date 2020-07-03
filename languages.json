@@ -10,15 +10,16 @@
   "ferblatin": "Ferb Latin",
   "chef": "Swedish Chef",
   "dolan": "Dolan",
-  "fudd": "Fudd",
+  "fudd": "Looney Tunes Fudd",
   "sindarin": "Elvish Sindarin",
   "quneya": "Elvish Quenya",
   "oldenglish": "Old English",
   "shakespeare": "Shakespeare English",
-  "us2uk": "US English to UK English",
-  "uk2us": "UK English to US English",
+  "groot": "Guardians of the Galaxy Groot",
+  "doge": "Doggy doge",
   "dothraki": "GOT Dothraki",
   "valyrian": "GOT Valyrian",
+  "navi": "Avatar Navi",
   "vulcan": "Startrek Vulcan",
   "klingon": "Startrek Klingon",
   "piglatin": "Pig Latin",
@@ -27,5 +28,7 @@
   "cheunh": "Star Wars Cheunh",
   "gungan": "Star Wars Gungan",
   "mandalorian": "Star Wars Mandalorian",
-  "huttese": "Star Wars Huttese"
+  "huttese": "Star Wars Huttese",
+  "us2uk": "US English to UK English",
+  "uk2us": "UK English to US English"
 }

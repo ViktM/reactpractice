@@ -8,14 +8,14 @@ export default function FunHeader() {
             accessibilityRole={'image'}
             style={styles.background}
             >
-            <Text style={styles.text}>Welcome to the Fanslator</Text>
+            <Text style={styles.text}>Fan'sLator</Text>
         </ImageBackground>
     );
 }
 const styles = StyleSheet.create({
     background: {
-        paddingBottom: 40,
-        paddingTop: 50,
+        paddingBottom: 20,
+        paddingTop: 10 ,
         paddingHorizontal: 32,
         backgroundColor: Colors.lighter,
     },
